@@ -1,1 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cloud Soft Treats — explore our signature frozen yogurt treats and share your feedback about our products and service.">
+<title>Cloud Soft Treats | Signature Treats & Guest Feedback</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+ <div class="container nav">
+  <a class="logo" href="#home"><span>cloud</span><small>SOFT TREATS</small></a>
+  <nav><a href="#products">Our Treats</a><a href="#experience">Experience</a><a href="#feedback">Feedback</a><a href="#stores">Locations</a></nav>
+  <a class="nav-pill" href="#feedback">Share Feedback</a>
+  <button class="hamb" id="hamb">☰</button>
+ </div>
+</header>
 
+<main>
+<section id="home" class="hero">
+ <div class="container hero-grid">
+  <div class="hero-copy">
+   <span class="eyebrow">CLOUD SOFT TREATS</span>
+   <h1>Good vibes.<br><em>Great treats.</em></h1>
+   <p>Discover our signature frozen yogurt creations, made for people who love playful flavors, premium toppings and a little moment of happiness.</p>
+   <div class="actions"><a class="btn dark" href="#products">Explore our treats</a><a class="btn outline" href="#feedback">Tell us what you think</a></div>
+   <div class="hero-note"><b>☁</b><span><strong>Your feedback shapes Cloud.</strong><small>Help us improve every treat and every visit.</small></span></div>
+  </div>
+  <div class="hero-visual">
+   <div class="hero-frame"><img src="assets/dubai-310.jpg" alt="Cloud Soft Treats Dubai Signature Treat"><div class="frame-caption"><span>FEATURED</span><strong>Dubai 310</strong><small>Dark chocolate • pistachio • kataifi</small></div></div>
+   <div class="floating-card"><span>8</span><strong>Signature<br>treats</strong></div>
+  </div>
+ </div>
+</section>
+
+<section id="products" class="section products-section">
+ <div class="container">
+  <div class="section-head"><div><span class="eyebrow">SIGNATURE TREATS</span><h2>Meet the menu.</h2></div><p>Learn what is inside every Cloud creation. Tap a product for a fuller description and flavor profile.</p></div>
+  <div class="filters"><button class="active" data-filter="all">All</button><button data-filter="chocolate">Chocolate</button><button data-filter="matcha">Matcha</button><button data-filter="coffee">Coffee</button><button data-filter="fruit">Fruit</button></div>
+  <div class="product-grid" id="productGrid"></div>
+ </div>
+</section>
+
+<section id="experience" class="experience">
+ <div class="container experience-grid">
+  <div class="experience-copy"><span class="eyebrow">THE CLOUD EXPERIENCE</span><h2>Not just a treat.<br><em>A little ritual.</em></h2><p>We want every visit to feel easy, welcoming and worth remembering — from the first look at the swirl to the last bite.</p></div>
+  <div class="experience-points">
+   <div><b>01</b><h3>Discover</h3><p>Explore flavors and combinations that fit your mood.</p></div>
+   <div><b>02</b><h3>Enjoy</h3><p>Take a moment, share the experience, and make it yours.</p></div>
+   <div><b>03</b><h3>Tell us</h3><p>Your honest feedback helps us improve our products and service.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="feedback" class="section feedback">
+ <div class="container">
+  <div class="section-head"><div><span class="eyebrow">YOUR VOICE MATTERS</span><h2>How was your Cloud?</h2></div><p>Rate the product and the service separately. It helps us understand what guests love and where we can do better.</p></div>
+  <div class="survey-card">
+   <form id="surveyForm">
+    <div class="survey-intro"><div class="survey-icon">♡</div><div><strong>Guest Experience Survey</strong><span>About 1–2 minutes • Your feedback is appreciated.</span></div></div>
+    <div class="form-grid">
+     <label>Visit date<input id="visitDate" type="date" required></label>
+     <label>Store visited<select id="surveyStore" required><option value="">Select a location</option><option>SM Megamall</option><option>SM MOA</option><option>SM City Grand Central</option></select></label>
+    </div>
+
+    <fieldset><legend>1. Product experience</legend>
+      <p class="question">How would you rate the product you tried?</p>
+      <div class="rating" data-name="productRating">
+       <button type="button" data-value="1">1</button><button type="button" data-value="2">2</button><button type="button" data-value="3">3</button><button type="button" data-value="4">4</button><button type="button" data-value="5">5</button>
+      </div><div class="rating-labels"><span>Needs improvement</span><span>Excellent</span></div>
+      <input type="hidden" id="productRating" required>
+      <label>What did you try?<select id="productTried" required><option value="">Select a product</option><option>Dubai 310</option><option>Cookie 280</option><option>Uji 280</option><option>Flurry 250</option><option>Ferro 310</option><option>Bravo 250</option><option>Seongsu 250</option><option>Tiramisu 250</option></select></label>
+      <label>What did you like about the product?<textarea id="productComment" rows="4" placeholder="Flavor, texture, toppings, presentation, portion, etc."></textarea></label>
+    </fieldset>
+
+    <fieldset><legend>2. Staff service</legend>
+      <p class="question">How would you rate our staff service?</p>
+      <div class="rating" data-name="serviceRating">
+       <button type="button" data-value="1">1</button><button type="button" data-value="2">2</button><button type="button" data-value="3">3</button><button type="button" data-value="4">4</button><button type="button" data-value="5">5</button>
+      </div><div class="rating-labels"><span>Needs improvement</span><span>Excellent</span></div>
+      <input type="hidden" id="serviceRating" required>
+      <div class="check-grid">
+       <label><input type="checkbox" name="service" value="Friendly"> Friendly</label>
+       <label><input type="checkbox" name="service" value="Attentive"> Attentive</label>
+       <label><input type="checkbox" name="service" value="Fast"> Fast service</label>
+       <label><input type="checkbox" name="service" value="Knowledgeable"> Knowledgeable</label>
+       <label><input type="checkbox" name="service" value="Clean"> Clean & organized</label>
+       <label><input type="checkbox" name="service" value="Welcoming"> Welcoming</label>
+      </div>
+      <label>How can we improve our service?<textarea id="serviceComment" rows="4" placeholder="Tell us what would make your next visit better."></textarea></label>
+    </fieldset>
+
+    <fieldset><legend>3. Overall experience</legend>
+      <p class="question">How likely are you to visit Cloud Soft Treats again?</p>
+      <div class="nps"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button><button type="button" data-score="4">4</button><button type="button" data-score="5">5</button><button type="button" data-score="6">6</button><button type="button" data-score="7">7</button><button type="button" data-score="8">8</button><button type="button" data-score="9">9</button><button type="button" data-score="10">10</button></div>
+      <div class="rating-labels"><span>Not likely</span><span>Very likely</span></div>
+      <input type="hidden" id="visitScore">
+      <label>Anything else you'd like us to know?<textarea id="overallComment" rows="4" placeholder="Optional"></textarea></label>
+    </fieldset>
+    <div class="consent"><label><input type="checkbox" id="followup"> I’m open to being contacted about my feedback.</label><input id="email" type="email" placeholder="Email (optional)"></div>
+    <button class="btn dark submit" type="submit">Submit my feedback</button>
+    <p class="privacy">Please do not include passwords, payment details or other sensitive information in this form.</p>
+   </form>
+   <div class="success" id="success"><div>✓</div><h3>Thank you for your feedback.</h3><p>Your response has been recorded in this browser for this demo. In production, connect the form to your business survey database or form service.</p><button class="btn outline" id="newSurvey">Submit another response</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="stores" class="section stores"><div class="container">
+ <div class="section-head"><div><span class="eyebrow">VISIT US</span><h2>Come find your cloud.</h2></div><p>Check the mall directory for the latest exact store level and operating hours.</p></div>
+ <div class="store-grid">
+  <article><span>01</span><h3>SM Megamall</h3><p>Mandaluyong City</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=SM+Megamall">Open Maps ↗</a></article>
+  <article><span>02</span><h3>SM MOA</h3><p>Pasay City</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=SM+Mall+of+Asia">Open Maps ↗</a></article>
+  <article><span>03</span><h3>SM City Grand Central</h3><p>Caloocan City</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=SM+City+Grand+Central">Open Maps ↗</a></article>
+ </div>
+</div></section>
+
+<section class="social"><div class="container social-inner"><div><span class="eyebrow">STAY IN THE CLOUD</span><h2>@cloud.soft.treats</h2><p>Follow for new treats, behind-the-scenes moments and guest favorites.</p></div><a class="btn light" href="https://www.instagram.com/cloud.soft.treats/" target="_blank">Instagram ↗</a></div></section>
+</main>
+
+<div class="product-modal" id="productModal"><div class="modal-box"><button class="close" id="closeModal">×</button><img id="detailImg" alt=""><div class="detail"><span class="eyebrow">SIGNATURE TREAT</span><h2 id="detailName"></h2><div class="price" id="detailPrice"></div><p id="detailDesc"></p><div class="detail-block"><b>Flavor profile</b><p id="detailFlavor"></p></div><div class="detail-block"><b>What's inside</b><p id="detailIngredients"></p></div><a href="#feedback" class="btn dark" id="detailFeedback">Rate this product</a></div></div></div>
+
+<footer><div class="container footer"><div class="logo"><span>cloud</span><small>SOFT TREATS</small><p>Good vibes. Great treats.</p></div><div><small>© 2026 Cloud Soft Treats • Guest feedback welcome</small></div></div></footer>
+<script src="script.js"></script>
+</body></html>
